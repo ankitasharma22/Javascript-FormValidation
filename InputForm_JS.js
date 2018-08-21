@@ -75,7 +75,7 @@ function goToWelcome() {
     var contactNumber = document.getElementById("contact_Error").value;
     var emailIdVal = document.getElementById("email_Error").value;
     if(firstName==="" && contactNumber===" " && emailIdVal ==="")
-        window.open('welcome.html');
+        window.location='welcome.html';
 }
 
 function validateFields() {
