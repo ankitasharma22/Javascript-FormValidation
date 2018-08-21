@@ -70,12 +70,11 @@ function validateEmailId() {
 }
 
 function goToWelcome() {
+    debugger;
     var firstName = document.getElementById("fName_Error").value;
     var contactNumber = document.getElementById("contact_Error").value;
     var emailIdVal = document.getElementById("email_Error").value;
-    var cityName = document.getElementById("city_Error").value;
-    var genderStatus = document.getElementById("gender_Error").value;
-    if(firstName==="" && contactNumber==="" && emailIdVal ==="" && cityName ==="" && genderStatus === "")
+    if(firstName==="" && contactNumber===" " && emailIdVal ==="")
         window.open('C:/Users/asharma/Desktop/Form-Validation/welcome.html');
 }
 
