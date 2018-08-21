@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="InputForm_CSS.css">
+    <script type="text/javascript" src="InputForm_JS.js"></script>
+</head>
+
+<body>
+
+<form style="border:1px solid #ccc">
+  <div class="container">
+    <h2>Register here</h2>
+    <hr>
+
+    <div><b class="compulsoryFields">*</b><b>First Name</b></label>
+    <input type="text" id="fName" placeholder="First Name" name="fName" onkeypress="return onlyAlphabets(event,this,name)">
+    <input class="errorMessage" id="fName_Error" type="text" readonly>
+    </div>
+
+    <div><b> Last Name</b>
+    <input type="text" placeholder="Last Name" name="lName" onkeypress="return onlyAlphabets(event,this,name);">
+    <input class="errorMessage" id="lName_Error" type="text" readonly>
+    </div>
+
+    <div><b class="compulsoryFields">*</b><b>Mobile Number</b></label>
+    <input type="number" id="contact" placeholder="Contact Number" name="contact" onkeypress="phonenumber(this); isNumber(event); validateLessThan9DigitContact();" required>
+    <input class="errorMessage" id="contact_Error" type="text" readonly>
+    </div>
+
+    <div><b class="compulsoryFields">*</b><b>Email Id</b></label>
+    <input type="text" id="email" placeholder="Email Id" name="email" onkeypress="return validateEmailId()"; required>
+    <input class="errorMessage" id="email_Error" type="text" readonly>
+    </div>
+
+    <div for="address"><b>Address</b></label>
+    <textarea type="text" placeholder="Address" name="address"></textarea>
+    <input class="errorMessage" type="text" readonly>
+    </div>
+
+    <div><b class="compulsoryFields">*</b><b>City</b>
+    <select name="City" id="City" onfocus="document.getElementById('city_Error').value='' ">
+            <option value="None"></option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Other">Other</option>
+    </select>
+    <input class="errorMessage" id="city_Error" type="text" readonly>
+    </div>
+
+    <div for="Gender"><b class="compulsoryFields">*</b><b>Gender</b>
+    <label class="radio-inline">
+        <input type="radio" value="Male" name="Gender" onfocus="document.getElementById('gender_Error').value='' ">Male
+    </label>
+    <label class="radio-inline">
+        <input type="radio" value="Female" name="Gender" onfocus="document.getElementById('gender_Error').value='' ">Female
+    </label>
+    <label class="radio-inline">
+        <input type="radio" value="Other" name="Gender" onfocus="document.getElementById('gender_Error').value='' ">Other
+    </label>
+    <input class="errorMessage" id="gender_Error" type="text" readonly>
+    </div>
+    
+    <div class="clearfix">
+      <button type="button" class="cancelbtn" onClick="window.location.reload()">Cancel</button>
+      <button type="button" class="signupbtn" onClick=" validateLessThan9DigitContact(); validateEmailId(); validateGender(); validateFields(); validateDropDown(); goToWelcome()">Sign Up</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
